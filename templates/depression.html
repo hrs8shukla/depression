@@ -26,12 +26,12 @@
   </nav>
 
 
-  <div class="section no-pad-bot" id="index-banner">
+  <div class="section no-pad-bot" align="center" id="index-banner">
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Forest Fire Prevention</h1>
+      <h1 class="header center orange-text">Depression Prevention</h1>
       <div class="row center">
-        <h5 class="header col s12 light">Predict the probability of Forest-Fire Occurence
+        <h5 class="header col s12 light">Predict the probability of Depression
         <br>
         </h5>
       </div>
@@ -40,76 +40,99 @@
     <form action='/predict' method="POST" class="col s12">
       <div class="row">
         <div class="input-field col s4">
-            <label for="first_name"><b>Gender</b></label>
-            <br>
-          <input   id="first_name" name='Gender'type="text" class="validate">
+            <label for="gender"><b>Gender</b></label>
+          
+          <select id="gender" name="Gender" class="validate">
+            <option value=1>Male</option>
+            <option value=0>Female</option>
+          </select>
         </div>
         <div class="input-field col s4">
 
-          <label for="last_name"><b>Age </b></label>
-            <br>
-          <input id="last_name"  name="Age" type="text" class="validate">
+          <label for="age"><b>Age </b></label>
+          <input id="age"  name="Age" type="text" class="validate">
 
         </div>
 
         <div class="input-field col s4">
             <label for="_name"><b>Marital Status</b></label>
-            <br>
-          <input id="_name" name="marital_status" type="text" class="validate">
+          <select id="_name" name="marital_status" class="validate">
+            <option value=0>Unmarried</option>
+            <option value=1>Married</option>
+            <option value=2>Widowed</option>
+            <option value=3>Divorced</option>
 
+          </select>
         </div>
         <div class="input-field col s4">
           <label for="_name2"><b>No of People in House</b></label>
-          <br>
         <input id="_name2" name="household_size" type="text" class="validate">
 
       </div>
       <div class="input-field col s4">
         <label for="_name3"><b>Income in Lakhs</b></label>
-        <br>
       <input id="_name3" name="household_income" type="text" class="validate">
 
     </div>
     <div class="input-field col s4">
       <label for="_name4"><b>Full Time Job</b></label>
-      <br>
-    <input id="_name4" name="full_time_work" type="text" class="validate">
+    <select id="_name4" name="full_time_work" class="validate">
+      <option value=1>Yes</option>
+      <option value=0>No</option>
+    </select>
 
   </div>
   <div class="input-field col s4">
     <label for="_name5"><b>Work type</b></label>
-    <br>
-  <input id="_name5" name="work_type" type="text" class="validate">
-
+  <select id="_name5" name="work_type" class="validate">
+    <option value=0>Unemployed</option>
+    <option value=1>Government</option>
+    <option value=2>Private</option>
+    <option value=3>Family Business</option>
+    <option value=4>Self Employed</option>
+  </select>
   </div>
   <div class="input-field col s4">
-    <label for="_name6"><b>Time in Current Job</b></label>
-    <br>
-  <input id="_name6" name="time_in_current_job" type="text" class="validate">
-
+    <label for="_name6"><b>Irregular Pulse</b></label>
+    <select id="_name6" name="irregular_pulse" class="validate">
+      <option value=1>Yes</option>
+      <option value=0>No</option>
+    </select>
   </div>
   <div class="input-field col s4">
     <label for="_name7"><b>Trouble Sleep</b></label>
-    <br>
-  <input id="_name7" name="trouble_sleep_history" type="text" class="validate">
-
+  <select id="_name7" name="trouble_sleep_history" class="validate">
+    <option value=1>Yes</option>
+    <option value=0>No</option>
+  </select>
   </div>
   <div class="input-field col s4">
     <label for="_name8"><b>Sleep Hours</b></label>
-    <br>
   <input id="_name8" name="sleep_hours" type="text" class="validate">
 
    </div>
    <div class="input-field col s4">
-    <label for="_name"><b>Vigorous Work</b></label>
-    <br>
-  <input id="_name" name="vigorous_work" type="text" class="validate">
+    <label for="_name9"><b>Vigorous Work</b></label>
+  <select id="_name9" name="vigorous_work" class="validate">
+      <option value=1>Yes</option>
+      <option value=0>No</option>
+    </select>
 
   </div>
   <div class="input-field col s4">
-    <label for="_name"><b>Moderate work</b></label>
-    <br>
-  <input id="_name" name="moderate_work" type="text" class="validate">
+    <label for="_name10"><b>Continuous Fight With Close ones ?</b></label>
+    <select id="_name10" name="fight" class="validate">
+      <option value=1>Yes</option>
+      <option value=0>No</option>
+    </select>
+
+  </div>
+  <div class="input-field col s4">
+    <label for="_name11"><b>Continuous Unhappy?</b></label>
+    <select id="_name11" name="unhappy" class="validate">
+      <option value=1>Yes</option>
+      <option value=0>No</option>
+    </select>
 
   </div>
       </div>
@@ -128,89 +151,7 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="section">
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">Crime Reports</h5>
-
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
-          </div>
-
-              <button class="btn waves-effect waves-light" type="submit" name="action">Check
-    <i class="material-icons right">send</i>
-              </button>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">Crime Prediction</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
-          </div>
-            <a href="/crime"> <button class="btn waves-effect waves-light"  name="">
-    <i class="material-icons right">Predict Crime</i><button></a>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">Check on Map</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
-
-              <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-              </button>
-      </div>
-
-    </div>
-    <br><br>
-  </div>
-  </div>>
-
-  <footer class="page-footer orange">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
-    </div>
-  </footer>
 
 
   <!--  Scripts-->
