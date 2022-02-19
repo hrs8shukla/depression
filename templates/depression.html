@@ -3,43 +3,36 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Starter Template - Materialize</title>
+  <title>Stress Predictor</title>
 
   <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  
+  <link rel="icon" href="https://i.ibb.co/1r35fsX/Sapto-favicon.png" type="image/x-icon">
+<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-  <nav class="light-blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-
-
+  
   <div class="section no-pad-bot" align="center" id="index-banner">
+
     <div class="container">
       <br><br>
-      <h1 class="header center orange-text">Depression Prevention</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Predict the probability of Depression
-        <br>
-        </h5>
+      <h1 class='container-heading'><span class="heading_font">Depression Prevention</span></h1>
+      <div class='description'>
+       
+        <p> Predict the probability of Depression.</p>
       </div>
+    </div>
 
-              <div class="row">
+              <div class="ml-container">
     <form action='/predict' method="POST" class="col s12">
       <div class="row">
-        <div class="input-field col s4">
+        <img style="width:16%; justify-content: right;padding-top:90px;padding-right:40px;" class="dep" src="{{ url_for('static', filename='dep1.png') }}" alt="Unable to process image">
+        
+        <div class="form-input">
             <label for="gender"><b>Gender</b></label>
           
           <select id="gender" name="Gender" class="validate">
@@ -47,14 +40,14 @@
             <option value=0>Female</option>
           </select>
         </div>
-        <div class="input-field col s4">
+        <div class="form-input">
 
           <label for="age"><b>Age </b></label>
           <input id="age"  name="Age" type="text" class="validate">
 
         </div>
 
-        <div class="input-field col s4">
+        <div class="form-input">
             <label for="_name"><b>Marital Status</b></label>
           <select id="_name" name="marital_status" class="validate">
             <option value=0>Unmarried</option>
@@ -64,17 +57,17 @@
 
           </select>
         </div>
-        <div class="input-field col s4">
-          <label for="_name2"><b>No of People in House</b></label>
+        <div class="form-input">
+          <label for="_name2"><b>No of family members</b></label>
         <input id="_name2" name="household_size" type="text" class="validate">
 
       </div>
-      <div class="input-field col s4">
+      <div class="form-input">
         <label for="_name3"><b>Income in Lakhs</b></label>
       <input id="_name3" name="household_income" type="text" class="validate">
 
     </div>
-    <div class="input-field col s4">
+    <div class="form-input">
       <label for="_name4"><b>Full Time Job</b></label>
     <select id="_name4" name="full_time_work" class="validate">
       <option value=1>Yes</option>
@@ -82,7 +75,7 @@
     </select>
 
   </div>
-  <div class="input-field col s4">
+  <div class="form-input">
     <label for="_name5"><b>Work type</b></label>
   <select id="_name5" name="work_type" class="validate">
     <option value=0>Unemployed</option>
@@ -92,34 +85,35 @@
     <option value=4>Self Employed</option>
   </select>
   </div>
-  <div class="input-field col s4">
+  <div class="form-input">
     <label for="_name6"><b>Irregular Pulse</b></label>
     <select id="_name6" name="irregular_pulse" class="validate">
       <option value=1>Yes</option>
       <option value=0>No</option>
     </select>
   </div>
-  <div class="input-field col s4">
+  <div class="form-input">
     <label for="_name7"><b>Trouble Sleep</b></label>
   <select id="_name7" name="trouble_sleep_history" class="validate">
     <option value=1>Yes</option>
     <option value=0>No</option>
   </select>
   </div>
-  <div class="input-field col s4">
+  <div class="form-input">
     <label for="_name8"><b>Sleep Hours</b></label>
   <input id="_name8" name="sleep_hours" type="text" class="validate">
 
    </div>
-   <div class="input-field col s4">
+   <div class="form-input">
     <label for="_name9"><b>Vigorous Work</b></label>
   <select id="_name9" name="vigorous_work" class="validate">
       <option value=1>Yes</option>
       <option value=0>No</option>
+      
     </select>
-
+   
   </div>
-  <div class="input-field col s4">
+  <div class="form-input">
     <label for="_name10"><b>Continuous Fight With Close ones ?</b></label>
     <select id="_name10" name="fight" class="validate">
       <option value=1>Yes</option>
@@ -127,38 +121,33 @@
     </select>
 
   </div>
-  <div class="input-field col s4">
+  <div class="form-input">
     <label for="_name11"><b>Continuous Unhappy?</b></label>
     <select id="_name11" name="unhappy" class="validate">
       <option value=1>Yes</option>
       <option value=0>No</option>
     </select>
-
   </div>
+  
       </div>
-
+    
       <div class="row center">
 
-          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+          <button type="submit" class="my-cta-button">Predict Probability</button>
       </div>
 
     </form>
       </div>
 
+      
+<div class="results">
+  
       <br><h4 align="center"<b>{{pred}}</b></h4>
         <br>
+</div>
 
     </div>
   </div>
 
-
-
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src=".js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
   </body>
 </html>
-

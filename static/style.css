@@ -1,0 +1,155 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(239, 236, 241);
+}
+
+
+/* Website Title */
+
+.container {
+    padding: 30px;
+    position: relative;
+    background: linear-gradient(45deg, #9ee87ef5, #90d871, #43c466);
+    background-size: 500% 500%;
+    animation: change-gradient 10s ease-in-out infinite;
+}
+
+@keyframes change-gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.container-heading {
+    margin: 0;
+}
+
+.heading_font {
+    color: #0c0707;
+    font-family: 'Pacifico', cursive;
+    font-size: 35px;
+    font-weight: normal;
+}
+
+.description p {
+    color: #0c3108;
+    font-style: italic;
+    font-size: 14px;
+    margin: -5px 0 0;
+}
+
+
+/* Text Area */
+
+.ml-container {
+    margin: 30px 0;
+    flex: 1 0 auto;
+}
+
+.form-input {
+    text-align: center;
+    width: 350px;
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+
+/* Predict Button */
+
+.my-cta-button {
+    border: 2px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 3px 3px #8c8c8c;
+    margin-top: 10px;
+    padding: 10px 36px;
+    /* color: #000000; */
+    display: inline-block;
+    font: italic bold 20px/1 "Calibri", sans-serif;
+    text-align: center;
+    color: rgb(2, 2, 2);
+    background-color: #76db79;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-color: #174923;
+}
+
+.my-cta-button:hover {
+    color: #0f7c26;
+    border: 2px solid #4d089a;
+}
+
+.my-cta-button:active {
+    box-shadow: 0 0;
+}
+
+.image {
+    justify-content: right;
+}
+
+
+/* Contact */
+
+.contact-icon {
+    color: #ffffff;
+    padding: 7px;
+}
+
+.contact-icon:hover {
+    color: #8c8c8c;
+}
+
+
+/* Footer */
+
+.footer {
+    flex-shrink: 0;
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(45deg, #443B96, #F60B68, #F4483A);
+    background-size: 500% 500%;
+    animation: change-gradient 10s ease-in-out infinite;
+}
+
+.footer-description {
+    color: #ffffff;
+    margin: 0;
+    font-size: 12px;
+}
+
+.dep {
+    width: 45%;
+    float: right;
+    margin-left: 20px;
+}
+
+
+/*  <div id="image">
+      <img class="dep" src="{{ url_for('static', filename='dep5.webp') }}" alt="Not Diabetes Image">
+      </div>
+
+/* Result */
+
+.results {
+    padding: 30px 0 0;
+    flex: 1 0 auto;
+    font-size: 25px;
+    color: #495044;
+}
